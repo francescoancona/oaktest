@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="oakPostgresDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource" lazy-init="true">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/oak_db" />
+		<property name="username" value="postgres" />
+		<property name="password" value="password" />
+	</bean>
+	
+<!--     <bean id="oakOracleDataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close" lazy-init="true" > -->
+<!--         <property name="URL" value="jdbc:oracle:thin:@localhost:1521:XE"/> -->
+<!--         <property name="user" value="system"/> -->
+<!--         <property name="password" value="password"/> -->
+<!--         <property name="connectionCachingEnabled" value="true"/> -->
+<!--     </bean> -->
+	
+</beans>
